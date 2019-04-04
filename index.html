@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>XEU!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="XEU" />
+    <meta name="apple-mobile-web-app-title" content="XEU" />
+    <meta name="theme-color" content="#bcd7ff" />
+    <meta name="msapplication-navbutton-color" content="#bcd7ff" />
+
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="msapplication-starturl" content="/index.html" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- STYLE & JS EXTERNAL -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+
+    <!-- FIN STYLE & JS EXTERNAL -->
+
+    <script src="./main.js"></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="bg-primary text-center py-3 mb-4">
+      <div class="container">
+        <h1 class="font-weight-light text-white">XEU</h1>
+        <!-- TEST -->
+        <div class="col-xl-3 col-md-6 mb-4 container text-center">
+          <div class="input-group">
+            <input
+              type="number"
+              min="1"
+              value="1"
+              class="form-control"
+              id="search"
+              aria-label="Dollar amount (with dot and two decimal places)"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text">€</span>
+              <button
+                type="button"
+                id="button-search"
+                class="btn btn-info"
+                onclick="convertMoney()"
+              >
+                Convertir
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FINTEST -->
+      </div>
+    </header>
+
+    <!-- Page Content -->
+
+    <div class="container">
+      <div class="row" id="current">
+        <!-- div center -->
+        <div class="container text-center">
+          <h1 class="mt-5 ">
+            Bienvenue sur le site de XEU
+          </h1>
+          <p class="lead ">
+            vous trouverez tout pour convertir votre money
+          </p>
+        </div>
+      </div>
+      <!-- deded -->
+    </div>
+    <!-- /.container -->
+  </body>
+</html>

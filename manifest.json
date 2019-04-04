@@ -1,0 +1,24 @@
+{
+  "name": "XEU",
+  "short_name": "XEU",
+  "description": "XEU contisseur online",
+  "lang": "fr-FR",
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "orientation": "any",
+  "theme_color": "#6279dd",
+  "icons": [
+    {
+      "src": "/assets/xeu.logo.64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/assets/xeu.logo.128.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/assets/xeu.logo.512.png",
+      "sizes": "512x512"
+    }
+  ]
+}
