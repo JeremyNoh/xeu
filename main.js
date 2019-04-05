@@ -1,7 +1,7 @@
 // > RESOURCES
 let moneyHistory = [];
 const API_BASE = "http://data.fixer.io/api/";
-const STORAGE_HISTORY_KEY = "pwanime.history";
+const STORAGE_HISTORY_KEY = "xeu.history";
 const API_FIXER = `${API_BASE}`;
 const API_KEY = "80f63375c53f573bcac618becf16a26d";
 const FETCH_BASIC = `${API_FIXER}latest?access_key=${API_KEY}&symbols=USD,AUD,CAD,PLN,MXN`;
@@ -181,8 +181,6 @@ function addMoneyMarkup({ title, descritpion }) {
 
   let { value: selected } = el.options[el.selectedIndex];
 
-  console.log(selected === title);
-
   if (selected === title) {
     return `
       <div class="col-xl-3 col-md-6 mb-4">
@@ -209,7 +207,9 @@ function addMoneyMarkup({ title, descritpion }) {
 }
 
 function updateHistory(arrayMoney) {
-  moneyHistory = moneyHistory.concat(arrayMoney);
+  //   moneyHistory = moneyHistory.concat(arrayMoney);
+  moneyHistory = [];
+  moneyHistory = arrayMoney;
   addMoneyToMarkupSelector(arrayMoney, "#history");
   localStorage.setItem(STORAGE_HISTORY_KEY, JSON.stringify(moneyHistory));
 }
@@ -250,8 +250,6 @@ async function convertMoney() {
     SEND_URL = `${FETCH_BASIC},${selected}`;
   }
 
-  console.log(SEND_URL);
-
   try {
     const response = await fetch(SEND_URL);
     if (!response.ok) {
@@ -261,14 +259,18 @@ async function convertMoney() {
     const { rates: results } = await response.json();
 
     let tab = [];
+    let histo = [];
     Object.entries(results).forEach(element => {
+      histo.push({ title: element[0], descritpion: element[1] });
       tab.push({ title: element[0], descritpion: element[1] * query });
     });
 
     // > Reset search
     document.querySelector("#current").innerHTML = "";
     addMoneyToMarkupSelector(tab, "#current");
-    // updateHistory(tab);
+    let hsitoryDiv = document.querySelector("#history");
+    hsitoryDiv.style.display = "none";
+    updateHistory(histo);
   } catch (error) {
     console.log("ERROR", error);
   }
