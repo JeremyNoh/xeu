@@ -57,7 +57,7 @@
     <script src="./main.js"></script>
   </head>
 
-  <body>
+  <body onload="selectNameMoney()">
     <!-- Header -->
     <header class="bg-primary text-center py-3 mb-4">
       <div class="container">
@@ -84,6 +84,16 @@
                 Convertir
               </button>
             </div>
+            <!-- select The Money Name -->
+            <div class="container text-center">
+              <select class="mdb-select md-form" id="option">
+                <option value="undefined" selected
+                  >Select Your Money | All</option
+                >
+                <div></div>
+              </select>
+            </div>
+            <!-- finSELECT -->
           </div>
         </div>
         <!-- FINTEST -->
@@ -104,8 +114,9 @@
           </p>
         </div>
       </div>
-      <!-- deded -->
     </div>
     <!-- /.container -->
   </body>
 </html>
+
+<!--   -->
